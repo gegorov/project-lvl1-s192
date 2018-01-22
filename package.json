@@ -27,6 +27,9 @@
     "babel-core": "*",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
-  }
+  },
+  "files": [
+    "dist"
+  ],
 
 }
