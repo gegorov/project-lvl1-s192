@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "brain games project",
   "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build",
   },
   "repository": {
     "type": "git",
@@ -24,4 +28,5 @@
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
   }
+
 }
