@@ -4,7 +4,9 @@
   "description": "brain games project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
   },
   "repository": {
     "type": "git",
@@ -20,9 +22,6 @@
     "babel-cli": "*",
     "babel-core": "*",
     "babel-preset-env": "*",
-    "babel-preset-stage-0": "*"
-  },
-  "scripts": {
-    "babel-node": "babel-node"
+    "babel-preset-stage-0": "*",
   }
 }
