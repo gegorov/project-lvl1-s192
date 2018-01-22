@@ -1,0 +1,19 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "brain games project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gegorov/project-lvl1-s192.git"
+  },
+  "author": "gegorov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gegorov/project-lvl1-s192/issues"
+  },
+  "homepage": "https://github.com/gegorov/project-lvl1-s192#readme"
+}
