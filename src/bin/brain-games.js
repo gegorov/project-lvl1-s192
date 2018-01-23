@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import greetings from '..';
+import startGame from '..';
 
-console.log('Welcome to the Brain Games!\n');
-
-greetings();
+const rules = '';
+startGame(rules);
