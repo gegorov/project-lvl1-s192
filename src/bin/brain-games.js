@@ -2,4 +2,5 @@
 import startGame from '..';
 
 const rules = '';
-startGame(rules);
+const type = 'bg';
+startGame(rules, type);
