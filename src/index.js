@@ -18,6 +18,7 @@ const even = (rules) => {
   console.log(hello);
   console.log(`${rules}\n`);
   const name = getName();
+  console.log(`Hello, ${name}!\n`);
 
   const getRandomNumber = () => Math.floor(Math.random() * 100);
   const isEven = num => (num % 2 === 0 ? 'yes' : 'no');
