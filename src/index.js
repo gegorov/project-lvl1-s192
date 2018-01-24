@@ -1,55 +1,52 @@
 import readlineSync from 'readline-sync';
-import { cons, car, cdr } from 'hexlet-pairs';
+import { car, cdr } from 'hexlet-pairs';
 
-const welcome = () => 'Welcome to the Brain Games!';
+const welcomeMessage = () => console.log('Welcome to the Brain Games!');
 
 const getName = () => readlineSync.question('May I have your name?: ');
+const getDescription = game => car(game);
+const getNumber = game => cdr(car(game));
+const getCorrectAnswer = game => cdr(cdr(game));
 
-const bg = () => {
-  const hello = welcome();
-  console.log(`${hello}\n`);
-  const name = getName();
-  console.log(`Hello, ${name}!`);
-  return 0;
-};
+const GAME_ROUNDS = 3;
 
-const even = (rules) => {
-  const GAME_ROUNDS = 3;
-  const hello = welcome();
-  console.log(hello);
-  console.log(`${rules}\n`);
-  const name = getName();
-  console.log(`Hello, ${name}!\n`);
+const winMessage = name => `Congratulations, ${name}!`;
+const failMessage =
+(name, wrongAnswer, correctAnswer) =>
+  `'${wrongAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+   Let's try again, ${name}!`;
+const correctAnswerMessage = 'Correct!';
 
-  const getRandomNumber = () => Math.floor(Math.random() * 100);
-  const isEven = num => (num % 2 === 0 ? 'yes' : 'no');
+const getRandomNumber = () => Math.floor(Math.random() * 100);
+const askQuestion = number => console.log(`Question: ${number}\n`);
 
-  const game = (counter) => {
-    const number = getRandomNumber();
-    const question = `Question: ${number}\n`;
-    if (counter === 0) {
-      console.log(`Congratulations, ${name}!`);
-      return;
-    }
-    const answerPair = cons(readlineSync.question(question), isEven(number));
 
-    if (car(answerPair) !== cdr(answerPair)) {
-      const errorMessage = `'${car(answerPair)}' is wrong answer ;(. Correct answer was '${cdr(answerPair)}'. Let's try again, ${name}!`;
-      console.log(errorMessage);
-      return;
-    }
-    console.log('Correct!');
-    game(counter - 1);
-  };
-
-  return game(GAME_ROUNDS);
-};
-
-const startGame = (rules, type) => {
-  switch (type) {
-    case 'even': return even(rules);
-    default: return bg();
+const engine = (name, rounds, game) => {
+  if (rounds === 0) {
+    console.log(winMessage(name));
   }
+  const gameInstance = game();
+  const correctAnswer = getCorrectAnswer(gameInstance);
+  const number = getNumber(gameInstance);
+
+  askQuestion(number);
+  const answer = readlineSync('Your answer: ');
+
+  if (answer !== correctAnswer) {
+    console.log(failMessage(name, answer, correctAnswer));
+    return 0;
+  }
+  console.log(correctAnswerMessage);
+  return engine(name, rounds - 1, game);
 };
 
-export default startGame;
+const newGame = (game) => {
+  welcomeMessage();
+  const playerName = getName();
+  console.log(`Hello, ${playerName}!`);
+  console.log(getDescription(game));
+  return engine(playerName, GAME_ROUNDS, game);
+};
+
+
+export { newGame, getRandomNumber };

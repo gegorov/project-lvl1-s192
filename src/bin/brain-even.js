@@ -1,6 +1,11 @@
 #!/usr/bin/env node
-import startGame from '..';
+import newGame from '..';
+import even from '../games/even';
 
-const rules = 'Answer "yes" if number even otherwise answer "no".';
-const type = 'even';
-startGame(rules, type);
+try {
+  // if something unexpected
+  newGame(even());
+  throw new Error('Something unexpected has occurred.');
+} catch (e) {
+  console.error(e);
+}
