@@ -1,6 +1,6 @@
 {
   "name": "brain-games-ge",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "brain console games inspired by hexlet",
   "main": "index.js",
   "bin": {
@@ -36,5 +36,8 @@
   },
   "dependencies": {
     "readline-sync": "*"
-  }
+  },
+  "files": [
+    "dist"
+  ],
 }
