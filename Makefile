@@ -3,7 +3,7 @@ install:
 start:
 	npm run babel-node -- src/bin/brain-games.js
 lint:
-	npm run eslint . --ignore-path .gitignore
+	npm run eslint .
 delete-old:
 	@echo Deletenig old install files and folders
 	rm -rf dist
