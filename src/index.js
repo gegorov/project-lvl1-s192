@@ -13,6 +13,7 @@ const bg = () => {
 };
 
 const even = (rules) => {
+  const GAME_ROUNDS = 3;
   const hello = welcome();
   console.log(hello);
   console.log(`${rules}\n`);
@@ -39,7 +40,7 @@ const even = (rules) => {
     game(counter - 1);
   };
 
-  return game(3);
+  return game(GAME_ROUNDS);
 };
 
 const startGame = (rules, type) => {
