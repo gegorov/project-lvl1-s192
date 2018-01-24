@@ -36,7 +36,8 @@
     "babel-eslint": "*"
   },
   "dependencies": {
-    "readline-sync": "*"
+    "readline-sync": "*",
+    "hexlet-pairs": "*"
   },
   "files": [
     "dist"
