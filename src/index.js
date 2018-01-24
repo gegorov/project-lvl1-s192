@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { cons, car, cdr, toString } from 'hexlet-pairs';
+import { cons, car, cdr } from 'hexlet-pairs';
 
 const welcome = () => 'Welcome to the Brain Games!';
 
@@ -31,10 +31,10 @@ const even = (rules) => {
       console.log(`Congratulations, ${name}!`);
       return;
     }
-    const answer = readlineSync.question(question);
-    const correctAnswer = isEven(number);
-    if (answer !== correctAnswer) {
-      const errorMessage = `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${name}!`;
+    const answerPair = cons(readlineSync.question(question), isEven(number));
+
+    if (car(answerPair) !== cdr(answerPair)) {
+      const errorMessage = `'${car(answerPair)}' is wrong answer ;(. Correct answer was '${cdr(answerPair)}'. Let's try again, ${name}!`;
       console.log(errorMessage);
       return;
     }
