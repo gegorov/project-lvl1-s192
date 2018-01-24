@@ -13,6 +13,11 @@ make install
 
 ### Run
 
+to start Brain Games:
 ```
 make start
+```
+to start Brain Even Game:
+```
+make start-even
 ```
