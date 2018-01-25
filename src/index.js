@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
-import { car, cdr, toString } from 'hexlet-pairs';
+import { car, cdr } from 'hexlet-pairs';
 
 const welcomeMessage = () => console.log('Welcome to the Brain Games!');
-const getRandomNumber = () => Math.floor(Math.random() * 100);
+// getRandomNumber The maximum is exclusive and the minimum is inclusive
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const getName = () => readlineSync.question('May I have your name?: ');
 const getDescription = game => car(game);
 const getQA = game => cdr(game);
@@ -18,13 +19,12 @@ const failMessage =
 Let's try again, ${name}!`;
 const correctAnswerMessage = 'Correct!';
 
-const askQuestion = number => console.log(`Question: ${number}`);
+const askQuestion = question => console.log(`Question: ${question}`);
 
 
 const engine = (name, rounds, game) => {
   const round = game();
 
-  console.log(`####### ${toString(round)}`);
   const pairQA = getQA(round);
   const question = getQuestion(pairQA);
   const correctAnswer = getCorrectAnswer(pairQA);
@@ -33,7 +33,7 @@ const engine = (name, rounds, game) => {
     console.log(winMessage(name));
     return 0;
   }
-
+  // console.log(`##### DEBUG print. question: ${question}, answer: ${correctAnswer}`);
   askQuestion(question);
   const answer = readlineSync.question('Your answer: ');
   if (answer !== correctAnswer) {
