@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import startGame from '..';
+import start from '../games/brain';
 
-const rules = '';
-const type = 'bg';
-startGame(rules, type);
+start();
