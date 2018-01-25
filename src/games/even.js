@@ -3,12 +3,14 @@ import { cons } from 'hexlet-pairs';
 import { newGame, getRandomNumber } from '..';
 
 const even = () => {
-  const rule = 'What is the result of the expression?';
+  const rule = 'Answer "yes" if number even otherwise answer "no".';
   const isEven = num => (num % 2 === 0 ? 'yes' : 'no');
+  const question = getRandomNumber();
+  const answer = isEven(question);
 
-  return cons(rule, cons(getRandomNumber, isEven));
+  return cons(rule, cons(question, answer));
 };
 
-const evenGame = () => newGame(even());
+const evenGame = () => newGame(even);
 
 export default evenGame;
