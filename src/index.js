@@ -6,7 +6,7 @@ const getRandomNumber = () => Math.floor(Math.random() * 100);
 const getName = () => readlineSync.question('May I have your name?: ');
 const getDescription = game => car(game);
 const getQA = game => cdr(game);
-const getNumber = qa => car(qa);
+const getQuestion = qa => car(qa);
 const getCorrectAnswer = qa => cdr(qa);
 
 const GAME_ROUNDS = 3;
@@ -26,7 +26,7 @@ const engine = (name, rounds, game) => {
 
   console.log(`####### ${toString(round)}`);
   const pairQA = getQA(round);
-  const number = getNumber(pairQA);
+  const question = getQuestion(pairQA);
   const correctAnswer = getCorrectAnswer(pairQA);
 
   if (rounds === 0) {
@@ -34,7 +34,7 @@ const engine = (name, rounds, game) => {
     return 0;
   }
 
-  askQuestion(number);
+  askQuestion(question);
   const answer = readlineSync.question('Your answer: ');
   if (answer !== correctAnswer) {
     console.log(failMessage(name, answer, correctAnswer));
