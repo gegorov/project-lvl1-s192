@@ -21,3 +21,7 @@ to start Brain Even Game:
 ```
 make start-even
 ```
+to start Brain Calc Game:
+```
+make start-calc
+```
