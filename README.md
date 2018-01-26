@@ -25,3 +25,7 @@ to start Brain Calc Game:
 ```
 make start-calc
 ```
+to start Brain GCD Game:
+```
+make start-gcd
+```
