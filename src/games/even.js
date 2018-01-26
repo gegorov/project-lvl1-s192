@@ -5,9 +5,9 @@ import { newGame, getRandomNumber } from '..';
 const rule = 'Answer "yes" if number even otherwise answer "no".';
 
 const even = () => {
-  const isEven = num => (num % 2 === 0 ? 'yes' : 'no');
+  const isEven = num => num % 2 === 0;
   const question = getRandomNumber(1, 1000);
-  const answer = isEven(question);
+  const answer = isEven(question) ? 'yes' : 'no';
 
   return cons(question, answer);
 };
