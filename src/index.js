@@ -5,10 +5,9 @@ const welcomeMessage = () => console.log('Welcome to the Brain Games!');
 // getRandomNumber The maximum is exclusive and the minimum is inclusive
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const getName = () => readlineSync.question('May I have your name?: ');
-const getDescription = game => car(game);
-const getQA = game => cdr(game);
-const getQuestion = qa => car(qa);
-const getCorrectAnswer = qa => cdr(qa);
+
+const getQuestion = game => car(game);
+const getCorrectAnswer = game => cdr(game);
 
 const GAME_ROUNDS = 3;
 
@@ -25,9 +24,8 @@ const askQuestion = question => console.log(`Question: ${question}`);
 const engine = (name, rounds, game) => {
   const round = game();
 
-  const pairQA = getQA(round);
-  const question = getQuestion(pairQA);
-  const correctAnswer = getCorrectAnswer(pairQA);
+  const question = getQuestion(round);
+  const correctAnswer = getCorrectAnswer(round);
 
   if (rounds === 0) {
     console.log(winMessage(name));
@@ -45,17 +43,17 @@ const engine = (name, rounds, game) => {
   return engine(name, rounds - 1, game);
 };
 
-const newGame = (game) => {
+const newGame = (game, rule) => {
   welcomeMessage();
-  const round = game();
+
   const playerName = getName();
   console.log(`Hello, ${playerName}!\n`);
-  const rules = getDescription(round);
-  if (rules === '') {
+
+  if (rule === '') {
     return 0;
   }
 
-  console.log(rules);
+  console.log(rule);
   return engine(playerName, GAME_ROUNDS, game);
 };
 
