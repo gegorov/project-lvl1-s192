@@ -2,9 +2,8 @@
 import { cons } from 'hexlet-pairs';
 import { newGame, getRandomNumber } from '..';
 
+const rule = 'What is the result of the expression?';
 const calc = () => {
-  const rule = 'What is the result of the expression?';
-
   const calculator = (operator, num1, num2) => {
     switch (operator) {
       case '-': return num1 - num2;
@@ -28,9 +27,9 @@ const calc = () => {
   const question = `${num1} ${operator} ${num2}`;
   const answer = `${calculator(operator, num1, num2)}`;
 
-  return cons(rule, cons(question, answer));
+  return cons(question, answer);
 };
 
-const calcGame = () => newGame(calc);
+const calcGame = () => newGame(calc, rule);
 
 export default calcGame;
