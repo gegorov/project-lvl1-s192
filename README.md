@@ -29,3 +29,7 @@ to start Brain GCD Game:
 ```
 make start-gcd
 ```
+to start Brain Balance Game:
+```
+make start-balance
+```
