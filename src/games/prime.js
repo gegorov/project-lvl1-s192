@@ -2,7 +2,7 @@
 import { cons } from 'hexlet-pairs';
 import { newGame, getRandomNumber } from '..';
 
-const rule = 'Balance the given number.';
+const rule = 'Answer "yes" if number is prime otherwise answer "no".';
 const prime = () => {
   const number = getRandomNumber(1, 10);
 
