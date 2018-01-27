@@ -10,6 +10,10 @@
 ```
 make install
 ```
+for global install:
+```
+sudo npm install -g brain-games-ge
+```
 
 ### Run
 
@@ -32,4 +36,25 @@ make start-gcd
 to start Brain Balance Game:
 ```
 make start-balance
+```
+#### Run with global installation
+to start Brain Games:
+```
+brain-games
+```
+to start Brain Even Game:
+```
+brain-even
+```
+to start Brain Calc Game:
+```
+brain-calc
+```
+to start Brain GCD Game:
+```
+brain-gcd
+```
+to start Brain Balance Game:
+```
+brain-balance
 ```
