@@ -21,7 +21,7 @@ const balance = () => {
 
     numArr[0] = Number(numArr[0]) + 1;
     numArr[numArr.length - 1] = Number(numArr[numArr.length - 1]) - 1;
-    return makeBalance(numArr.join(''));
+    return makeBalance(numArr.sort().join(''));
   };
 
 
