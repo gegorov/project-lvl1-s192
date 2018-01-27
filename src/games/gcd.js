@@ -25,6 +25,4 @@ const gcDivisor = () => {
   return cons(question, answer);
 };
 
-const gcdGame = () => newGame(gcDivisor, rule);
-
-export default gcdGame;
+export default () => newGame(gcDivisor, rule);

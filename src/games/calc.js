@@ -30,6 +30,4 @@ const calc = () => {
   return cons(question, answer);
 };
 
-const calcGame = () => newGame(calc, rule);
-
-export default calcGame;
+export default () => newGame(calc, rule);
