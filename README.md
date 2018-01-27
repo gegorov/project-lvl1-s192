@@ -37,6 +37,10 @@ to start Brain Balance Game:
 ```
 make start-balance
 ```
+to start Brain Progression Game:
+```
+make start-progression
+```
 #### Run with global installation
 to start Brain Games:
 ```
@@ -57,4 +61,8 @@ brain-gcd
 to start Brain Balance Game:
 ```
 brain-balance
+```
+to start Brain Progression Game:
+```
+brain-progression
 ```
