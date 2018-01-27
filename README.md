@@ -41,6 +41,10 @@ to start Brain Progression Game:
 ```
 make start-progression
 ```
+to start Brain Prime Game:
+```
+make start-prime
+```
 #### Run with global installation
 to start Brain Games:
 ```
@@ -65,4 +69,8 @@ brain-balance
 to start Brain Progression Game:
 ```
 brain-progression
+```
+to start Brain Prime Game:
+```
+brain-prime
 ```
