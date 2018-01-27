@@ -18,9 +18,11 @@ const balance = () => {
       return num;
     }
     const numArr = String(num).split('').sort();
+    const iMin = 0;
+    const iMax = numArr.length - 1;
 
-    numArr[0] = Number(numArr[0]) + 1;
-    numArr[numArr.length - 1] = Number(numArr[numArr.length - 1]) - 1;
+    numArr[iMin] = Number(numArr[iMin]) + 1;
+    numArr[iMax] = Number(numArr[iMax]) - 1;
     return makeBalance(numArr.sort().join(''));
   };
 
