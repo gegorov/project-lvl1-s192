@@ -57,5 +57,29 @@ const newGame = (game, rule) => {
   return engine(playerName, GAME_ROUNDS, game);
 };
 
+const launcher = () => {
+  const drawLine = (symbol, length) => {
+    const start = '';
+    const iter = (line, len) => {
+      if (len === 0) {
+        return line;
+      }
+      return iter(line.concat(symbol), len - 1);
+    };
+    const result = iter(start, length);
+    return console.log(result);
+  };
 
-export { newGame, getRandomNumber };
+  welcomeMessage();
+  drawLine('#', 20);
+  console.log('Please choose your game:');
+  console.log('1. Even game');
+  console.log('2. Calc game');
+  console.log('3. Balance game');
+  console.log('4. GCD game');
+  console.log('5. Prime game');
+  console.log('6. progression game');
+  drawLine('#', 20);
+};
+
+export { newGame, getRandomNumber, launcher };
